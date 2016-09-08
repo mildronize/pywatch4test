@@ -11,6 +11,10 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     'Click>=6.0',
+    'nose==1.3.7',
+    'rednose==1.2.1',
+    'coverage==4.2',
+    'watchdog==0.8.3',
     # TODO: put package requirements here
 ]
 
