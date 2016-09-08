@@ -73,11 +73,14 @@ class PathProcessor:
 
     def when_file_changed(self, filename):
         os.system('cls' if os.name == 'nt' else 'clear')
-        args = self.get_filename_and_package(filename, os.name,
-                self.startswith_test)
+        args = self.get_filename_and_package(filename, os.name, self.startswith_test)
         nose = "nosetests"
-        options = "--rednose --with-coverage --cover-erase " \
-            "--cover-package={package} -v {test_file_path}".format(**args)
+        if self.package_name is not "":
+            options = "--rednose --with-coverage --cover-erase " \
+                "--cover-package={package} -v {test_file_path}".format(**args)
+        else:
+            options = "--rednose -v {test_file_path}".format(**args)
+
         # -v verbose show a list of tests
         cmd = nose + " " + options
         print(cmd)

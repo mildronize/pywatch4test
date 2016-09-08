@@ -2,6 +2,7 @@
 
 import click
 import time
+import os
 
 from watchdog.observers import Observer
 from watchdog.events import PatternMatchingEventHandler
@@ -27,13 +28,22 @@ class ModifiedHandler(PatternMatchingEventHandler):
 
 
 @click.command()
-def main(args=None):
+@click.option('--unittest-dir', '-d', default="tests", help='Where is tests \
+directory?')
+@click.option('--package-name', '-p', default="", help='Your package name')
+@click.option('--endswith-test', '-s', is_flag=True, help='Naming styles, if \
+enable this flag, pattern is `*_test`')
+def main(unittest_dir, package_name, endswith_test):
     """Console script for pywatch4test"""
-    unittest_dir = "tests"
-    package_name = "simple_calculator"
-    startswith_test = True
+    #  unittest_dir = "tests"
+    #  package_name = "simple_calculator"
+    startswith_test = not endswith_test
 
-    click.echo("Running... pywath4test")
+    click.echo("Running...  pywath4test")
+    click.echo("")
+    click.echo("Watching... *.py at {}".format(os.getcwd()))
+    click.echo("Test Directory: {}/{}".format(os.getcwd(), unittest_dir))
+    click.echo("-"*20)
 
     event_handler = ModifiedHandler(
             PathProcessor(unittest_dir, package_name, startswith_test))
