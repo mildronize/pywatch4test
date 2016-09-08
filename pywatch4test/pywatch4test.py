@@ -83,7 +83,11 @@ class PathProcessor:
 
         # -v verbose show a list of tests
         cmd = nose + " " + options
-        print(cmd)
-        os.system(cmd)
+        try:
+            with open(args['test_file_path']) as file:
+                print(cmd)
+                os.system(cmd)
+        except IOError as e:
+            print("'{}' doesn't found".format(args['test_file_path']))
 
 
