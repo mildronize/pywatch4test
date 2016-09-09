@@ -87,3 +87,6 @@ install: clean ## install the package to the active Python's site-packages
 
 md2rst:
 	pandoc --from=markdown --to=rst --output=README.rst README.md
+
+gen_bin: ## generate a single python for running standalone
+	python scripts/generate_bin.py
