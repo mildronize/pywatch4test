@@ -9,14 +9,8 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [
-    'Click>=6.0',
-    'nose==1.3.7',
-    'rednose==1.2.1',
-    'coverage==4.2',
-    'watchdog==0.8.3',
-    # TODO: put package requirements here
-]
+with open('requirements.txt') as requirements_file:
+    requirements = requirements_file.read().splitlines()
 
 test_requirements = [
     # TODO: put package test requirements here
