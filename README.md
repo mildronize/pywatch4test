@@ -2,6 +2,7 @@ pywatch4test
 ============
 
 [![Build Status](https://travis-ci.org/mildronize/pywatch4test.svg?branch=master)](https://travis-ci.org/mildronize/pywatch4test)
+[![Coverage Status](https://coveralls.io/repos/github/mildronize/pywatch4test/badge.svg?branch=master)](https://coveralls.io/github/mildronize/pywatch4test?branch=master)
 [![Updates](https://pyup.io/repos/github/mildronize/pywatch4test/shield.svg)](https://pyup.io/repos/github/mildronize/pywatch4test/)
 
 A command line for instantly testing python codes when the file is modified

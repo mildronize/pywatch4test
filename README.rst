@@ -1,7 +1,7 @@
 pywatch4test
 ============
 
-|Build Status| |Updates|
+|Build Status| |Coverage Status| |Updates|
 
 A command line for instantly testing python codes when the file is
 modified
@@ -105,5 +105,7 @@ MIT license
 
 .. |Build Status| image:: https://travis-ci.org/mildronize/pywatch4test.svg?branch=master
    :target: https://travis-ci.org/mildronize/pywatch4test
+.. |Coverage Status| image:: https://coveralls.io/repos/github/mildronize/pywatch4test/badge.svg?branch=master
+   :target: https://coveralls.io/github/mildronize/pywatch4test?branch=master
 .. |Updates| image:: https://pyup.io/repos/github/mildronize/pywatch4test/shield.svg
    :target: https://pyup.io/repos/github/mildronize/pywatch4test/

@@ -22,12 +22,15 @@ deploy:
       cnhjdFI5NU9sZmZDeHNqYkgrNHh0Mk1lMDZDVXdCTmdWMWxDUzlaTkNGODJZcUtuNks1VDlkYkk9
   provider: pypi
 env:
-- TOXENV=py35
-- TOXENV=py34
-- TOXENV=py33
-- TOXENV=py27
-- TOXENV=pypy
-install: pip install -U tox
+  - TOXENV=py35
+  - TOXENV=py34
+  - TOXENV=py33
+  - TOXENV=py27
+  - TOXENV=pypy
+install: 
+  - pip install -U tox
+  - pip install coveralls 
 language: python
 python: 3.5
 script: tox -e ${TOXENV}
+after_success: coveralls
